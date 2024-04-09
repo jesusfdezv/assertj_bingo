@@ -14,7 +14,7 @@ public class BingoTest {
     @Test
     public void testRellenarNumerosCarton1() { //Comprueba que la primera columna contiene números del 1 al 9.
         // Crear un cartón vacío
-        int[][] carton = new int[3][9];
+        int[][] carton = new int[9][3];
 
         // Invocar el método
         Bingo.rellenarNumerosCarton(carton);
@@ -27,7 +27,7 @@ public class BingoTest {
     @Test
     public void testRellenarNumerosCarton2() { // Comprueba que no haya numeros repetidos
         // Crear un cartón vacío
-        int[][] carton = new int[3][9];
+        int[][] carton = new int[9][3];
 
         // Invocar el método
         Bingo.rellenarNumerosCarton(carton);

@@ -104,8 +104,49 @@ public class BingoTest {
         for (int[] con: carton){
             System.out.println(Arrays.toString(con));
         }
+    }
 
+    @Test
+    public void testbuscarValorRepetido(){
+        int[] array = {1, 2, 3, 4, 5};
+        assertTrue(Bingo.buscarValorRepetido(array, 3));
+        assertFalse(Bingo.buscarValorRepetido(array, 6));
+    }
+    @Test
+    public void testpintarCarton(){
+        int[][] carton = {
+                {1, -1, 3},
+                {4, 5, -1},
+                {-1, 8, 9}
+        };
+        int[] bolas = {1, 5, 9};
 
+        int aciertos = Bingo.pintarCarton(carton, bolas);
 
+        // Verificamos que se cuentan correctamente los aciertos
+        assertEquals(3, aciertos);
+    }
+    @Test
+    public void testinsertarAlFinal(){
+        int[] array = {1, 2, 3};
+        int elemento = 4;
+
+        int[] nuevoArray = Bingo.insertarAlFinal(array, elemento);
+
+        // Verificamos que el tamaño del nuevo array es correcto
+        assertEquals(array.length + 1, nuevoArray.length);
+
+        // Verificamos que el nuevo elemento está al final del array
+        assertEquals(elemento, nuevoArray[nuevoArray.length - 1]);
+    }
+    @Test
+    public void testordenar(){
+        int[] array = {5, 1, 4, 2, 3};
+        int[] sortedArray = Bingo.ordenar(array);
+
+        int[] expectedArray = {1, 2, 3, 4, 5};
+
+        // Verificamos que el array está ordenado correctamente
+        assertArrayEquals(expectedArray, sortedArray);
     }
 }
